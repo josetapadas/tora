@@ -4,5 +4,8 @@ require_relative "tora/version"
 
 module Tora
   class Error < StandardError; end
-  # Your code goes here...
+  class Application
+    def call(env)
+      [200, { "Content-Type" => "text/html"}, ["Welcome to Tora 虎!"]]
+    end
 end
