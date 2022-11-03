@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "Tora Ruby Framework"
   spec.description = "An opinionated rack-based ruby lightweight framework"
-  spec.homepage = ""
+  spec.homepage = "https://github.com/josetapadas/tora"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
