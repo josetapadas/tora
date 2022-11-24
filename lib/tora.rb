@@ -18,7 +18,7 @@ module Tora
         response = controller.send(controller_action)
       rescue
         controller = Tora::ErrorController.new(env)
-        response = controller.send('error')
+        response = controller.send('exception')
       end
 
       [200, { "Content-Type" => "text/html"}, [response]]
