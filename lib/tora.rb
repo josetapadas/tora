@@ -12,11 +12,14 @@ module Tora
 
   class Application
     def call(env)
+      return [404, { "Content-Type" => "text/html"}, []] if env['PATH_INFO'] == '/favicon.ico'
+
       begin
         controller_class, controller_action = get_controller_and_action(env)
         controller = controller_class.new(env)
         response = controller.send(controller_action)
-      rescue
+      rescue => e
+        puts e
         controller = Tora::ErrorController.new(env)
         response = controller.send('exception')
       end
